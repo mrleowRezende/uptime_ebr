@@ -12,4 +12,4 @@ client.on('message', async msg => {
         msg.reply("Pong!");
     }
 });
-client.login('MTE0MTAyNzQ4NjQ0MDg5MDU0MA.GRL8_J.s2NoWifcPEC8jBVW6ODierSo6jexvsCLYO1gmo');
+client.login(process.env.BOT_TOKEN);
