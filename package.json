@@ -1,0 +1,25 @@
+{
+  "name": "uptime_ebr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "dependencies": {
+    "discord.js": "^14.12.1",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrleowRezende/uptime_ebr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrleowRezende/uptime_ebr/issues"
+  },
+  "homepage": "https://github.com/mrleowRezende/uptime_ebr#readme"
+}
