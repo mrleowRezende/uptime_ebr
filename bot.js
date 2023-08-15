@@ -1,40 +1,17 @@
-require('dotenv').config();
-const Discord = require('discord.js');
-const client = new Discord.Client();
-
-const messageQueue = new Map();
-
-client.once('ready', () => {
-    // console.log('Logged in as ' + client.user.tag);
-    console.log("O bot está pronto para funcionar")
+import { config } from 'dotenv';
+config();
+import { Client, GatewayIntentBits } from 'discord.js';
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+client.on('ready', () => {
+    console.log('Logged in as ' + client.user.tag);
 });
 
-//client.on('message', async message => {
 
+client.on('interactionCreate', async interaction => {
+  if (!interaction.isChatInputCommand()) return;
 
-    // Verifica se a mensagem contém "dominio.com.br" e "Monitor is DOWN"
-    //if (message.content.includes('dominio.com.br') && message.content.includes('Monitor is DOWN')) {
-        // Adiciona a mensagem à fila com a chave como ID do autor
-        //messageQueue.set(message.author.id, message.content);
-    //}
-    
-    // Verifica se a mensagem contém "dominio.com.br" e "Monitor is UP"
-    //if (message.content.includes('dominio.com.br') && message.content.includes('Monitor is UP')) {
-        // Verifica se o autor tem uma mensagem na fila com "Monitor is DOWN"
-        //if (messageQueue.has(message.author.id)) {
-            // Deleta a mensagem "Monitor is DOWN"
-            //const prevMessage = await message.channel.messages.fetch({ limit: 1, before: message.id });
-            //if (prevMessage.size > 0 && prevMessage.first().content.includes('Monitor is DOWN')) {
-                //await prevMessage.first().delete();
-            //}
-            
-            // Deleta a mensagem atual com "Monitor is UP"
-            //await message.delete();
-
-            // Remove a mensagem da fila
-            //messageQueue.delete(message.author.id);
-        //}
-    //}
-//});
-
+  if (interaction.commandName === 'ping') {
+    await interaction.reply('Pong!');
+  }
+});
 client.login(process.env.BOT_TOKEN);

@@ -3,11 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "bot.js",
-  "dependencies": {
-    "discord.js": "^14.12.1",
-    "dotenv": "^16.3.1"
-  },
-  "devDependencies": {},
+  "type": "module",
   "scripts": {
     "start": "node bot.js"
   },
@@ -21,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/mrleowRezende/uptime_ebr/issues"
   },
-  "homepage": "https://github.com/mrleowRezende/uptime_ebr#readme"
+  "homepage": "https://github.com/mrleowRezende/uptime_ebr#readme",
+  "dependencies": {
+    "discord.js": "^14.12.1",
+    "dotenv": "^16.3.1"
+  }
 }
